@@ -1,0 +1,24 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<div class="main-content">
+  <div class="top-content">
+     <%= link_to image_tag("logo/logo.png"), root_path %>
+  </div>
+  <div class="login-container">
+    <div id="output"></div>
+    <div class="avatar"></div>
+      <%= form_with model: @user, url: user_session_path, class: 'form-box', local: true do |f| %>
+        <%= f.email_field :email,autofocus: true, placeholder:"Email" %>
+
+        <%= f.password_field :password, autocomplete: "off", placeholder:"Password" %>
+
+        <% if devise_mapping.rememberable? %>
+          <%= f.label :remember_me %><br />
+          <%= f.check_box :remember_me %>
+        <% end %>
+
+        <%= f.submit "ログイン" %>
+
+      <% end %>
+  </div>
+</div>
