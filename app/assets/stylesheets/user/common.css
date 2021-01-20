@@ -4,8 +4,9 @@ html,body{
   height: 100%;
 }
 
-.space{
-  padding: 50px;
+.main_content{
+  background-image: url("../../assets/hero/h1_hero.jpg");
+  height:100%;
 }
 
 .login-container{
