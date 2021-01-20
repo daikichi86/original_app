@@ -1,0 +1,32 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<div class="space"></div>
+
+<div class= "container">
+    <div class="top_content">
+      <%= link_to image_tag("logo/logo.png"), root_path %>Listing
+    </div>
+    <div class="login-container">
+      <div class="avatar"></div>
+      <%= form_with model: @user, url: user_registration_path, class: 'form-box', local: true do |f| %>
+        <%= devise_error_messages! %>
+          
+          <%= f.text_field :nickname, autofocus: true, maxlength: "6", placeholder:"nickname" %>
+
+          <%= f.email_field :email, placeholder:"Email" %>
+
+          <%= f.password_field :password, autocomplete: "off", placeholder:"Password" %>
+
+          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"Password_confirmation" %>
+        
+          <%= f.submit "新規登録" %>
+
+          <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %> Password characters minimum</em>
+          <% end %><br />
+
+          <em>6 Nickname characters maximum</em>
+
+      <% end %>
+    </div>
+</div>

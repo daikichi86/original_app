@@ -68,8 +68,18 @@
                                             </li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li class="add-list"><a href="listing_details.html"><i class="ti-plus"></i> add Listing</a></li>
-                                            <li class="login"><a href="#">
-                                                <i class="ti-user"></i> Sign in or Register</a>
+                                            <li class="login">
+                                                <% if user_signed_in? %>
+                                                  <div class="ti-user">
+                                                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                                                    <%= link_to "トップページ", root_path %>
+                                                  </div>
+                                                <% else %>
+                                                  <div class="ti-user">
+                                                    <%= link_to "ログイン", new_user_session_path, class: "post" %>
+                                                    <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+                                                  </div>
+                                                <% end %>
                                             </li>
                                         </ul>
                                     </nav>
