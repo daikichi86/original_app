@@ -55,9 +55,6 @@
                                     <nav>
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="catagori.html">Catagories</a></li>
-                                            <li><a href="listing.html">Listing</a></li>
                                             <li><a href="#">Page</a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
@@ -70,15 +67,11 @@
                                             <li class="add-list"><a href="listing_details.html"><i class="ti-plus"></i> add Listing</a></li>
                                             <li class="login">
                                                 <% if user_signed_in? %>
-                                                  <div class="ti-user">
                                                     <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
                                                     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-                                                  </div>
                                                 <% else %>
-                                                  <div class="ti-user">
-                                                    <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+                                                    <li><%= link_to 'ログイン', new_user_session_path, class: "login2" %></li>
                                                     <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-                                                  </div>
                                                 <% end %>
                                             </li>
                                         </ul>
@@ -97,7 +90,6 @@
         <!-- Header End -->
     </header>
     <main>
-
         <!-- Hero Area Start-->
         <div class="slider-area hero-overly">
             <div class="single-slider hero-overly  slider-height d-flex align-items-center">
@@ -106,7 +98,7 @@
                         <div class="col-xl-8 col-lg-9">
                             <!-- Hero Caption -->
                             <div class="hero__caption">
-                                <span>Explore the city</span>
+                                <span>Post your favorite place</span>
                                 <h1>Discover Great Places</h1>
                             </div>
                             <!--Hero form -->
@@ -143,8 +135,7 @@
                     <div class="col-lg-12">
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-80">
-                            <span>Most visited places</span>
-                            <h2>Popular Locations</h2>
+                            <span>Posted location</span>
                         </div>
                     </div>
                 </div>
@@ -233,7 +224,7 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle section-tittle2 text-center mb-80">
                             <span>Easy to explore</span>
-                            <h2>How It Works</h2>
+                            <h2> 3 step </h2>
                         </div>
                     </div>
                 </div>
@@ -244,8 +235,8 @@
                                 <span class="flaticon-list"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="#">1. Choose a Category</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                <h5><a href="#">1. カテゴリーを選択</a></h5>
+                                <p>カテゴリを選択することであなたに合った場所を指定できる</p>
                             </div>
                             <!-- Shpape -->
                             <img class="shape1 d-none d-lg-block" src="assets/icon/serices1.png" alt="">
@@ -257,8 +248,8 @@
                                 <span class="flaticon-problem"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="#">2. what you want</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                <h5><a href="#">2. あなたの気になる投稿</a></h5>
+                                <p>お気に入りの投稿を見つけましょう</p>
                             </div>
                             <img class="shape2 d-none d-lg-block" src="assets/icon/serices2.png" alt="">
                         </div>
@@ -269,8 +260,8 @@
                                 <span class="flaticon-respect"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="#">3. Go out & Explore</a></h5>
-                                <p>incidid labore lore magna aliqua uisipsum suspendis loris.</p>
+                                <h5><a href="#">3. コメントしましょう</a></h5>
+                                <p>投稿にコメントしましょう</p>
                             </div>
                         </div>
                     </div>
@@ -298,7 +289,7 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="catagori.html">Leving Hotel</a></h5>
-                                <p>Must explain your how this keind denoun pleasure</p>
+                                <p>投稿されたホテル</p>
                                 <a href="catagori.html">View Details</a>
                             </div>
                         </div>
@@ -310,7 +301,7 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="catagori.html">Night Life</a></h5>
-                                <p>Must explain your how this keind denoun pleasure</p>
+                                <p>投稿されたバー、ナイトクラブ</p>
                                 <a href="catagori.html">View Details</a>
                             </div>
                         </div>
@@ -321,8 +312,8 @@
                                 <span class="flaticon-home"></span>
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="catagori.html">Culture Place</a></h5>
-                                <p>Must explain your how this keind denoun pleasure</p>
+                                <h5><a href="catagori.html">Spot</a></h5>
+                                <p>投稿されたスポット</p>
                                 <a href="catagori.html">View Details</a>
                             </div>
                         </div>
@@ -334,7 +325,7 @@
                             </div>
                             <div class="cat-cap">
                                 <h5><a href="catagori.html">Resturent</a></h5>
-                                <p>Must explain your how this keind denoun pleasure</p>
+                                <p>投稿されたレストラン</p>
                                 <a href="catagori.html">View Details</a>
                             </div>
                         </div>
@@ -351,19 +342,16 @@
                     <div class="row justify-content-end">
                         <div class="col-lg-8">
                             <div class="visit-caption">
-                                <span>We are offering for you</span>
-                                <h3>Every Month, Millions of People 
-                                    visit this site We’ve Built.</h3>
-                                <p>Unlike what its name implies, dry cleaning is not actually a 'dry' process. Clothes are soaked in a different solvent.</p>
+                                <span>私はあなたに提供したい</span>
+                                <h3>このサイトを利用することで多くの情報を得られます。</h3>
                                 <!--Single Visit categories -->
                                 <div class="visit-categories mb-40">
                                     <div class="visit-location">
                                         <span class="flaticon-travel"></span>
                                     </div>
                                     <div class="visit-cap">
-                                        <h4>Great places in the world</h4>
-                                        <p>Unlike what its name implies, dry cleaning is not actu  process. Clothes soaked differentent.
-                                        </p>
+                                        <h4>素晴らしい場所</h4>
+                                        <p>画像を投稿することにより、共感を得ることができます。</p>
                                     </div>
                                 </div>
                                 <!--Single Visit categories -->
@@ -372,9 +360,8 @@
                                         <span class="flaticon-work"></span>
                                     </div>
                                     <div class="visit-cap">
-                                        <h4>Biggest category listing</h4>
-                                        <p>Unlike what its name implies, dry cleaning is not actu  process. Clothes soaked differentent.
-                                        </p>
+                                        <h4>最大のカテゴリリスト</h4>
+                                        <p>カテゴリ別で管理しています。</p>
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +372,7 @@
         </div>
         <!-- peoples-visit End -->
         <!-- Testimonial Start -->
-        <div class="testimonial-area testimonial-padding">
+        <%#div class="testimonial-area testimonial-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -441,10 +428,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div%>
         <!-- Testimonial End -->
         <!-- Subscribe Area Start -->
-        <div class="subscribe-area section-bg pt-150 pb-150" data-background="assets/gallery/section_bg04.jpg">
+        <%#div class="subscribe-area section-bg pt-150 pb-150" data-background="assets/gallery/section_bg04.jpg">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
@@ -465,10 +452,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div%>
         <!-- Subscribe Area End -->
         <!-- Blog Ara Start -->
-        <div class="home-blog-area section-padding30">
+        <%#div class="home-blog-area section-padding30">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -521,7 +508,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div%>
         <!-- Blog Ara End -->
 
     </main>
@@ -547,8 +534,6 @@
                                     <h4>Quick Link</h4>
                                     <ul>
                                         <li><a href="#">Home</a></li>
-                                        <li><a href="#">Listing</a></li>
-                                        <li><a href="#">About</a></li>
                                         <li><a href="#">Contact</a></li>
                                     </ul>
                                 </div>
@@ -570,11 +555,6 @@
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-tittle">
-                                    <h4>Download App</h4>
-                                    <ul>
-                                        <li class="app-log"><a href="#"><img src="assets/gallery/app-logo.png" alt=""></a></li>
-                                        <li><a href="#"><img src="assets/gallery/app-logo2.png" alt=""></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

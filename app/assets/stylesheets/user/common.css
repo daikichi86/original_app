@@ -9,6 +9,10 @@ html,body{
   height:100%;
 }
 
+.top-content{
+  padding: 50px;
+}
+
 .login-container{
   position: relative;
   width: 300px;

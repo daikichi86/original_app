@@ -1,24 +1,102 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Directory HTML-5 Template </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
 
-<div class="main-content">
-  <div class="top-content">
-     <%= link_to image_tag("logo/logo.png"), root_path %>
-  </div>
-  <div class="login-container">
-    <div id="output"></div>
-    <div class="avatar"></div>
-      <%= form_with model: @user, url: user_session_path, class: 'form-box', local: true do |f| %>
-        <%= f.email_field :email,autofocus: true, placeholder:"Email" %>
+		<!-- CSS here -->
+            <link rel="stylesheet" href="../../assets/bootstrap.min.css">
+            <link rel="stylesheet" href="../../assets/owl.carousel.min.css">
+            <link rel="stylesheet" href="../../assets/slicknav.css">
+            <link rel="stylesheet" href="../../assets/flaticon.css">
+            <link rel="stylesheet" href="../../assets/animate.min.css">
+            <link rel="stylesheet" href="../../assets/magnific-popup.css">
+            <link rel="stylesheet" href="../../assets/fontawesome-all.min.css">
+            <link rel="stylesheet" href="../../assets/themify-icons.css">
+            <link rel="stylesheet" href="../../assets/slick.css">
+            <link rel="stylesheet" href="../../assets/nice-select.css">
+            <link rel="stylesheet" href="../../assets/style.css">
+   </head>
 
-        <%= f.password_field :password, autocomplete: "off", placeholder:"Password" %>
+   <body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="../../assets/logo/loder.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <% if devise_mapping.rememberable? %>
-          <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
+    <main>
+      <div class="main-content">
+        <div class="top-content">
+          <%= link_to image_tag("logo/logo.png"), root_path %>
+        </div>
+        <div class="login-container">
+        <div id="output"></div>
+        <div class="avatar"></div>
+        <%= form_with model: @user, url: user_session_path, class: 'form-box', local: true do |f| %>
+          <%= f.email_field :email,autofocus: true, placeholder:"Email" %>
+
+          <%= f.password_field :password, autocomplete: "off", placeholder:"Password" %>
+
+          <% if devise_mapping.rememberable? %>
+            <%= f.label :remember_me %><br />
+            <%= f.check_box :remember_me %>
+          <% end %>
+          <%= f.submit "ログイン" %>
         <% end %>
+        </div>
+      </div>
+    </main>
 
-        <%= f.submit "ログイン" %>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
 
-      <% end %>
-  </div>
-</div>
+
+    <!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="../../assets/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="../../assets/vendor/jquery-1.12.4.min.js"></script>
+        <script src="../../assets/popper.min.js"></script>
+        <script src="../../assets/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="../../assets/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="../../assets/owl.carousel.min.js"></script>
+        <script src="../../assets/slick.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="../../assets/wow.min.js"></script>
+		<script src="../../assets/animated.headline.js"></script>
+        <script src="../../assets/jquery.magnific-popup.js"></script>
+
+		<!-- Nice-select, sticky -->
+        <script src="../../assets/jquery.nice-select.min.js"></script>
+		<script src="../../assets/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="../../assets/contact.js"></script>
+        <script src="../../assets/jquery.form.js"></script>
+        <script src="../../assets/jquery.validate.min.js"></script>
+        <script src="../../assets/mail-script.js"></script>
+        <script src="../../assets/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="../../assets/plugins.js"></script>
+        <script src="../../assets/main.js"></script>
+        
+    </body>
+</html>
