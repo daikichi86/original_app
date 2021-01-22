@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Directory HTML-5 Template </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="../../assets/bootstrap.min.css">
+            <link rel="stylesheet" href="../../assets/owl.carousel.min.css">
+            <link rel="stylesheet" href="../../assets/slicknav.css">
+            <link rel="stylesheet" href="../../assets/flaticon.css">
+            <link rel="stylesheet" href="../../assets/animate.min.css">
+            <link rel="stylesheet" href="../../assets/magnific-popup.css">
+            <link rel="stylesheet" href="../../assets/fontawesome-all.min.css">
+            <link rel="stylesheet" href="../../assets/themify-icons.css">
+            <link rel="stylesheet" href="../../assets/slick.css">
+            <link rel="stylesheet" href="../../assets/nice-select.css">
+            <link rel="stylesheet" href="../../assets/style.css">
+   </head>
+
+   <body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="../../assets/logo/loder.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%#投稿する内容の入力%>
+    <main>
+    <div class="items-sell-contents">
+      <div class="items-sell-main">
+      <h2 class="items-sell-title">商品の情報を入力</h2>
+
+      <%= form_with model: @item, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+    <%# 投稿画像 %>
+        <div class="img-upload">
+          <div class="weight-bold-text">
+            出品画像
+          <span class="indispensable">必須</span>
+          </div>
+          <div class="click-upload">
+            <p>クリックしてファイルをアップロード</p>
+            <%= f.file_field :image, id:"item-image" %>
+          </div>
+        </div>
+    <%# 商品名と商品説明 %>
+        <div class="new-items">
+          <div class="weight-bold-text">
+            商品名
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+          <div class="items-explain">
+            <div class="weight-bold-text">
+              商品の説明
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+          </div>
+        </div>
+    <%# 商品の詳細 %>
+        <div class="items-detail">
+          <div class="weight-bold-text">商品の詳細</div>
+          <div class="form">
+            <div class="weight-bold-text">
+              カテゴリー
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+            <div class="weight-bold-text">
+              商品の状態
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:sales_status_id, SalesStatus.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+          </div>
+        </div>
+    <%# 配送について %>
+        <div class="items-detail">
+          <div class="weight-bold-text question-text">
+            <span>配送について</span>
+          </div>
+          <div class="form">
+            <div class="weight-bold-text">
+              配送料の負担
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:shipping_fee_status_id, ShippingFeeStatus.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+            <div class="weight-bold-text">
+              発送元の地域
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+            <div class="weight-bold-text">
+              発送までの日数
+              <span class="indispensable">必須</span>
+            </div>
+            <%= f.collection_select(:scheduled_delivery_id, ScheduledDelivery.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+          </div>
+        </div>
+    <%# 下部ボタン %>
+        <div class="sell-btn-contents">
+          <%= f.submit "投稿する" ,class:"sell-btn" %>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+<%##############################################################%>
+      <div class="input-group-icon mt-10">
+        <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+        <div class="form-select" id="default-select">
+          <select>
+            <option value="1">City</option>
+            <option value="1">Dhaka</option>
+            <option value="1">Dilli</option>
+            <option value="1">Newyork</option>
+            <option value="1">Islamabad</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-group-icon mt-10">
+        <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+        <div class="form-select" id="default-select">
+          <select>
+            <option value="1">Country</option>
+            <option value="1">Bangladesh</option>
+            <option value="1">India</option>
+            <option value="1">England</option>
+            <option value="1">Srilanka</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Message'" required></textarea>
+      </div>
+    </main>
+
+    <!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="../../assets/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="../../assets/vendor/jquery-1.12.4.min.js"></script>
+        <script src="../../assets/popper.min.js"></script>
+        <script src="../../assets/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+        <script src="../../assets/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="../../assets/owl.carousel.min.js"></script>
+        <script src="../../assets/slick.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="../../assets/wow.min.js"></script>
+		<script src="../../assets/animated.headline.js"></script>
+        <script src="../../assets/jquery.magnific-popup.js"></script>
+
+		<!-- Nice-select, sticky -->
+        <script src="../../assets/jquery.nice-select.min.js"></script>
+		<script src="../../assets/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="../../assets/contact.js"></script>
+        <script src="../../assets/jquery.form.js"></script>
+        <script src="../../assets/jquery.validate.min.js"></script>
+        <script src="../../assets/mail-script.js"></script>
+        <script src="../../assets/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="../../assets/plugins.js"></script>
+        <script src="../../assets/main.js"></script>
+    </body>
+</html>
