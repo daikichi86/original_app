@@ -584,9 +584,15 @@
         </div>
         <!-- Footer End-->
     </footer>
+    
     <!-- Scroll Up -->
-    <div id="back-top" >
+    <%#div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div%>
+
+    <div class='purchase-btn'>
+      <span class='purchase-btn-text'>投稿する</span>
+      <%= link_to image_tag("camera.png", size: '185x50' ,class: "purchase-btn-icon"), root_path %>
     </div>
 
 

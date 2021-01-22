@@ -6,7 +6,7 @@ html,body{
 
 .main-content{
   background-image: url("../../assets/hero/h1_hero.jpg");
-  height:100%;
+  min-height: 100vh;
 }
 
 .top-content{
@@ -126,4 +126,28 @@ animation-fill-mode: both;
 .fadeInUp {
 -webkit-animation-name: fadeInUp;
 animation-name: fadeInUp;
+}
+
+/*メイン画面:投稿ボタン*/
+.purchase-btn {
+  width: 120px;
+  background: red;
+  text-align: center;
+  border-radius: 10%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 60%;
 }
