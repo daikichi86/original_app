@@ -4,7 +4,7 @@ class MainsController < ApplicationController
   end
 
   def new
-    #@area = Area.new
+    @area = Area.new
   end
 
 end

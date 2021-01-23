@@ -42,8 +42,8 @@
       <div class="items-sell-main">
       <h2 class="items-sell-title">商品の情報を入力</h2>
 
-      <%= form_with model: @item, local: true do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
+      <%= form_with model: @area, local: true do |f| %>
+      <%# render 'shared/error_messages', model: f.object %>
     <%# 投稿画像 %>
         <div class="img-upload">
           <div class="weight-bold-text">
@@ -118,7 +118,7 @@
       </div>
     </div>
 <%##############################################################%>
-      <div class="input-group-icon mt-10">
+      <%#div class="input-group-icon mt-10">
         <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
         <div class="form-select" id="default-select">
           <select>
@@ -147,7 +147,7 @@
       <div class="mt-10">
         <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''"
         onblur="this.placeholder = 'Message'" required></textarea>
-      </div>
+      </div%>
     </main>
 
     <!-- JS here -->
