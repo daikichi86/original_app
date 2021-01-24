@@ -4,7 +4,14 @@ class MainsController < ApplicationController
   end
 
   def new
-    @area = Area.new
+    @place = Place.new
+  end
+
+
+  private
+
+  def place_params
+    params.require(:place).permit(:name, :info, :image).merge(user_id: current_user.id)
   end
 
 end
